@@ -1,0 +1,44 @@
+@import "tzukuri/variables";
+@import "tzukuri/mixins";
+
+#social-proof {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  background-color: #FAFAFA;
+  margin-bottom: 1.5vw;
+  margin-top: 1.5vw;
+
+  .container {
+    .social-blurb {
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 1.5vw;
+      width: 50%;
+
+      h1 {
+        padding-bottom: 20px;
+        font-weight: 200;
+      }
+
+      i {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .tzukuri {
+    font-size: 1.875rem;
+    line-height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: 200;
+    letter-spacing: 10px;
+    position: relative;
+  }
+
+  @media only screen and (max-width: $tabletLandscape) {
+    .container .social-blurb {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,169 @@
+@import "tzukuri/variables";
+@import "tzukuri/mixins";
+
+#menu {
+  background-color: $tz-background;
+  border-right: 1px solid $tz-inactive;
+  box-sizing: border-box;
+
+  ul {
+    li {
+      border-bottom: 1px solid $tz-inactive;
+      padding: 3.5vw;
+      a {
+        color: $tz-active;
+      }
+    }
+  }
+}
+
+// mobile only styles
+header#mobile-head {
+  display: none;
+
+  .container {
+    #hamburger, #link-to-cart {
+      width: 20%;
+    }
+
+    #logo {
+      width: 60%;
+    }
+  }
+}
+
+// desktop only styles
+header#desktop-head {
+  .container {
+    #logo #tzukuri {
+      float: left;
+    }
+  }
+}
+
+// styles common to both mobile and desktop
+header {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition-property: background-color, border-bottom-color, line-height;
+  transition-duration: 0.25s;
+
+  &.no-bg .container {
+    #hamburger i, #link-to-cart i, #link-to-cart a, #navigation li a {
+      color: $tz-content !important;
+    }
+    #logo #tzukuri {
+      color: $tz-title;
+    }
+  }
+
+  &.scrolling {
+      border-bottom: 1px solid $tz-inactive;
+      background-color: rgba(255, 255, 255, 0.99);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0px 0px 5px rgba(0,0,0,0.03);
+
+      .container {
+        #hamburger i {
+          color: $tz-active;
+        }
+
+        #link-to-cart i, #link-to-cart a, #navigation ul li a {
+          color: $tz-content;
+        }
+
+        #logo #tzukuri {
+          color: $tz-title;
+        }
+
+        #navigation ul li a.active {
+          color: $tz-title;
+          border-bottom: 1px solid $tz-title;
+        }
+      }
+  }
+
+  .container {
+    display: flex;
+
+    div {
+      text-align: center;
+    }
+
+    #hamburger {
+      i {
+        float: left;
+      }
+    }
+
+    #logo {
+      #tzukuri {
+        @include font-size(30px);
+        font-weight: 200;
+        letter-spacing: 10px;
+        color: white;
+      }
+    }
+
+    #navigation {
+      ul {
+        float: right;
+        margin-top: 7px;
+      }
+
+      ul li {
+        display: inline;
+
+
+        a {
+          @include font-size(14px);
+          letter-spacing: 0.5px;
+          margin-left: 20px;
+          color: white;
+
+          &:hover, &.active {
+              color: white;
+              border-bottom: 1px solid white;
+          }
+        }
+
+        &#shop-now a:hover{
+          border-bottom: none;
+        }
+      }
+    }
+
+    #link-to-cart {
+      a {
+        float: right;
+      }
+    }
+
+    #hamburger, #link-to-cart {
+      i {
+        @include font-size(26px);
+        line-height: 60px;
+      }
+
+      a, i {
+        color: white;
+      }
+    }
+  }
+}
+
+// switch between mobile and desktop headers on tablet landscape
+@media only screen and (max-width: $tabletLandscape) {
+  header#mobile-head {
+    display: block;
+  }
+
+  header#desktop-head {
+    display: none;
+  }
+
+  header .container #logo #tzukuri, header .container #hamburger i, header .container #link-to-cart a i {
+    @include font-size(22px);
+    line-height: 60px;
+  }
+}

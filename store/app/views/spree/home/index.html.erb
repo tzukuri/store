@@ -1,0 +1,39 @@
+<% @body_id = 'home-page' %>
+
+<div class="hero store">
+  <div class="bg photo"></div>
+  <div class="bg shade"></div>
+  <div class="container content">
+    <h1>Beautiful. Unlosable.</h1>
+    <p>Discover your next pair of glasses with <span class="bold">free shipping</span> and <span class="bold">free returns for 21 days</span>. </p>
+  </div>
+</div>
+
+<div class="" id="store-home-content">
+  <div id="utility-section">
+    <div class="half-section">
+      <%= link_to nested_taxons_path(Spree::Taxon.find_by_name('Eyeglasses')) do %>
+        <div class="half-section-banner eyeglasses">
+          <div class="container section-content">
+            <h1>Eyeglasses</h1>
+            <p>Browse our unisex eyeglasses frames &rsaquo;</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="half-section">
+      <%= link_to nested_taxons_path(Spree::Taxon.find_by_name('Sunglasses')) do %>
+        <div class="half-section-banner sunglasses">
+          <div class="container section-content">
+            <h1>Sunglasses</h1>
+            <p>Browse our unisex sunglasses frames &rsaquo;</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render partial: 'layouts/social_proof' %>
+
+  <%= render partial: 'layouts/cant_decide' %>
+</div>

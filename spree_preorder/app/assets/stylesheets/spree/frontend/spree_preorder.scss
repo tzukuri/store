@@ -1,0 +1,30 @@
+#preorder-indicator {
+  @include font-size(12px);
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+
+  p {
+    @include font-size(12px);
+    padding-bottom: 0px;
+    margin-top: 0px;
+  }
+}
+
+.preorder-pill {
+  border: 1px solid $tz-active;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: $tz-active;
+  padding: 10px;
+  text-align: center;
+
+  &.products {
+    @include font-size(11px);
+    border-color: $tz-content;
+    color: $tz-content;
+  }
+}
+
+#products-preorder {
+  margin-top: 10px;
+}

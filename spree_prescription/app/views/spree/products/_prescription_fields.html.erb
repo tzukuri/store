@@ -1,0 +1,17 @@
+<% if @product.accepts_prescription %>
+  <div id="prescription-method-group" class="hidden">
+    <label><%= Spree.t(:prescription_method) %></label>
+    <select id="prescription-method" name="prescription_method">
+      <option value="email">I will email it to hello@tzukuri.com</option>
+      <option value="upload">I will upload it now</option>
+      <option value="call">I'm not sure, please call me to discuss</option>
+      <option value="on_file">You have my script on file</option>
+    </select>
+  </div>
+
+
+  <div id="prescription-upload-group" class="hidden">
+    <label><%= Spree.t(:prescription_upload) %></label>
+    <%= file_field :prescription, :attachment, id: 'prescription_upload' %>
+  </div>
+<% end %>

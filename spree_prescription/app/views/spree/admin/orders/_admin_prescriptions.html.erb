@@ -1,0 +1,34 @@
+<% if order.prescriptions.count > 0 %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">Prescriptions</h1>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>SKU</th>
+          <th>Attachment</th>
+        </tr>
+      </thead>
+      <tbody id="order-prescriptions" data-hook="order_details_prescriptions">
+        <% order.prescriptions.each do |prescription| %>
+          <tr class="prescription">
+            <td>
+              <strong><%= prescription.method %></strong>
+            </td>
+            <td>
+              <%= prescription.sku %>
+            </td>
+            <td>
+              <%= image_tag prescription.attachment.url %>
+              <%#= link_to prescription.attachment_file_name, prescription.attachment(:original) unless !prescription.attachment? %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

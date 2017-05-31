@@ -1,0 +1,114 @@
+@import "tzukuri/variables";
+@import "tzukuri/mixins";
+
+footer {
+    background: $lavender-grey;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    p, ul li, a {
+      @include font-size(14px);
+      color: white;
+    }
+
+    a {
+      line-height: 200%;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .footer-head {
+      @include font-size(16px);
+      font-weight: 600;
+    }
+
+    #footer-subhead {
+      padding-top: 10px;
+    }
+
+    #footer-signup {
+      padding-top: 10px;
+
+      form {
+        display: inline;
+
+        input, button {
+          @include font-size(14px);
+        }
+
+        button {
+          margin: 0;
+          padding-left: 12px;
+          padding-right: 12px;
+
+          border-color: $white;
+          color: $white;
+
+          &:hover {
+            color: $tz-background-alt;
+            background-color: $white;
+          }
+
+        }
+
+        input {
+          float: left;
+          margin-right: 10px;
+          width: 75%;
+        }
+
+        @media only screen and (max-width: $tabletLandscape) {
+          input {
+            width: 100%;
+            margin-bottom: 1.5vh;
+          }
+        }
+      }
+    }
+
+    #social-links  {
+      padding-top: 20px;
+
+      a {
+        display: inline-block;
+        padding-right: 20px;
+      }
+    }
+
+    #sitemap {
+      padding-top: 5px;
+    }
+
+    hr {
+      border-top: 1px solid rgba(255, 255, 255, 1.00);
+    }
+
+    #footer-bottom {
+      p {
+        @include font-size(12px);
+      }
+
+      #quote {
+        float: left;
+      }
+
+      #copy {
+        float: right;
+      }
+    }
+}
+
+@media only screen and (max-width: $tabletPortrait) {
+  footer {
+    #footer-signup {
+      margin-bottom: 40px;
+    }
+
+    #copy {
+      float: left !important;
+    }
+  }
+}

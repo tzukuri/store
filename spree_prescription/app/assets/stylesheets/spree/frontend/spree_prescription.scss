@@ -1,0 +1,15 @@
+#prescription-upload-group, #prescription-method-group {
+  &.hidden {
+    display: none;
+  }
+}
+
+#cart-errors {
+  p {
+    color: $tz-error;
+    @include font-size(13px);
+  }
+
+  margin-top: 20px;
+  text-align: center;
+}
