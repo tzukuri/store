@@ -28,7 +28,7 @@ deploy.sh
 .DS_Store
 
 # ignore spree product asset folders
-public/spree/products/
-public/images/prescription/
-public/spree
+store/public/spree/products/
+store/public/images/prescription/
+store/public/spree
 .env

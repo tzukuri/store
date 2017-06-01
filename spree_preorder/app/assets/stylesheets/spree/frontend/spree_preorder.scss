@@ -1,12 +1,25 @@
 #preorder-indicator {
-  @include font-size(12px);
   margin-top: 1vw;
   margin-bottom: 1vw;
 
   p {
-    @include font-size(12px);
-    padding-bottom: 0px;
-    margin-top: 0px;
+    @include font-size(14px);
+    line-height: 26px;
+  }
+
+  .preorder-pill {
+    margin-right: 1vw;
+    float: left;
+  }
+
+  @media only screen and (max-width: $smartphone) {
+    .preorder-pill {
+      width: 30%;
+      margin-right: 3vw;
+    }
+    p {
+      line-height: 120%;
+    }
   }
 }
 
@@ -15,8 +28,14 @@
   text-transform: uppercase;
   border-radius: 5px;
   color: $tz-active;
-  padding: 10px;
+  padding: 0.5vw;
+
+  @media only screen and (max-width: $smartphone) {
+    padding: 1.5vw;
+  }
+
   text-align: center;
+  @include font-size(12px);
 
   &.products {
     @include font-size(11px);

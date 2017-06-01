@@ -310,6 +310,10 @@
           font-weight: 300;
           display:inline-block;
           margin: 0 0 0 20px;
+
+          @media only screen and (max-width: $smartphone) {
+            margin: 0;
+          }
         }
 
         #cart-form {
